@@ -62,7 +62,8 @@ func traverseFilesystem(currentPath string, root bool, tree treeprint.Tree, dept
 	// Iterate through the files of the directory
 	files, _ := ioutil.ReadDir(currentPath)
 	for _, f := range files {
-		// Check the depth level and stop when -L flag is used.
+		// Check the depth level and stop
+		// when it reaches the depth (according to the-L flag).
 		if depth == *flagDirLimit {
 			continue
 		}
